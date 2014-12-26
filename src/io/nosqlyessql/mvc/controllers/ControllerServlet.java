@@ -1,4 +1,6 @@
-package io.nosqlyessql.mvc;
+package io.nosqlyessql.mvc.controllers;
+
+import io.nosqlyessql.mvc.model.User;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,7 +14,7 @@ import java.io.IOException;
 public class ControllerServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserModel user = new UserModel();
+        User user = new User();
         user.setName("Terry");
         user.setEmail("terry@nosqlyessql.io");
 

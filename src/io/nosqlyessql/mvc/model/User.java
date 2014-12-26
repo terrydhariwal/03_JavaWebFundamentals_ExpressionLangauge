@@ -1,6 +1,6 @@
-package io.nosqlyessql.mvc;
+package io.nosqlyessql.mvc.model;
 
-public class UserModel {
+public class User {
 
     private String name;
     private String email;

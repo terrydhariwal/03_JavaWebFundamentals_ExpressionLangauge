@@ -1,4 +1,4 @@
-<%@ page import="io.nosqlyessql.mvc.UserModel" %>
+<%@ page import="io.nosqlyessql.mvc.model.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -26,17 +26,17 @@
                 They can contain Java code
         --%>
         <%
-          UserModel global_user = (UserModel) request.getServletContext().getAttribute("global_user");
+          User global_user = (User) request.getServletContext().getAttribute("global_user");
           if(global_user == null) {
-            global_user = new UserModel();
+            global_user = new User();
           }
-          UserModel session_user = (UserModel) request.getSession().getAttribute("session_user");
+          User session_user = (User) request.getSession().getAttribute("session_user");
           if(session_user == null) {
-            session_user = new UserModel();
+            session_user = new User();
           }
-          UserModel request_user = (UserModel) request.getAttribute("request_user");
+          User request_user = (User) request.getAttribute("request_user");
           if(request_user == null) {
-            request_user = new UserModel();
+            request_user = new User();
           }
         %>
         <%-- JSP Expressions start/end with <%= ... %%>

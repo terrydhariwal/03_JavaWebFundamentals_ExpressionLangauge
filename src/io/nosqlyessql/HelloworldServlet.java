@@ -19,6 +19,7 @@ public class HelloworldServlet extends HttpServlet {
 
         // getInitParameter gets Servlet level parameters (in annotations or web.xml). Servlet level params in web.xml will override annotation values
         product = getInitParameter("ProductName");
+        getServletContext().setAttribute("ProductName", product);
 
         // getServletContext().getInitParameter(...) gets application level parameters (in web.xml nested inside <context-param>)
         appLevelParam = getServletContext().getInitParameter("AppLevelParam");

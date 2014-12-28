@@ -4,7 +4,14 @@
 <html>
 
 <head>
-  <title>My JSP</title>
+  <%-- initParam maps to the application level settings in <context-param>...</context-param> in web.xml.
+        It does NOT map to the @WebInitParams (servlet level settings).
+        For EL to access Servlet level parameters, they need to be added to:
+          - the global scope via ...   getServletContext().setAtrribute, or
+          - the session scope via ...  request.getSession().setAttribute or
+          - the request scope via ...  request.setAttribute()
+  --%>
+  <title>${ initParam.AppLevelParam }</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <link href="app.css" rel="stylesheet" type="text/css" >
@@ -17,7 +24,9 @@
 <section class="main container-fluid">
   <div class="container">
 
-    <h1>Home</h1>
+    <h1>${ ProductName }</h1>
+
+
 
     <div class="row-fluid">
       <div class="col-md-3"></div>

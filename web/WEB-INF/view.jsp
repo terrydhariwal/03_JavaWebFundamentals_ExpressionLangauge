@@ -21,8 +21,17 @@
 
     <div class="row-fluid">
 
+      <div class="col-md-9">
+        <ul class="nav nav-tabs">
+          <li><a href="#home" data-toggle="tab">${app_settings.tabNames[0]}</a></li>
+          <li><a href="#other" data-toggle="tab">${app_settings.tabNames[1]}</a></li>
+          <li><a href="#message" data-toggle="tab">${app_settings.tabNames[2]}</a></li>
+          <li><a href="#settings" data-toggle="tab">${app_settings.tabNames[3]}</a></li>
+        </ul>
+      </div>
+
       <div class="container">
-        <div class="${app_css.scriptletsAndJSPExpressions_CssClass}"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
+        <div class="${app_settings.scriptletsAndJSPExpressions_CssClass}"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
           <h2>Using JSP Scriplets and JSP Expressions</h2>
           <%--  JSP Scriptlets start/end with <% ... %>
                   They can contain Java code
@@ -53,7 +62,7 @@
       </div>
 
       <div class="container">
-        <div class="${ app_css.expressionsLanguage_CssClass }"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
+        <div class="${ app_settings.expressionsLanguage_CssClass }"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
           <h2>Using Expression Language which is much simpler ...</h2>
           Global Scope: Welcome ${ global_user.name } </br>
           Session Scope: Welcome ${ session_user.name } </br>

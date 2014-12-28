@@ -1,10 +1,21 @@
 package io.nosqlyessql.mvc.model;
 
-public class ApplicationCssSettings {
+public class MyCustomApplicationSettings {
 
 
     private String ScriptletsAndJSPExpressions_CssClass = ""; //NOTE - for EL to work, member variables referenced in JSP need to start with lower case - even if this starts with uppercase!!!
     private String ExpressionsLanguage_CssClass = ""; //NOTE - for EL to work, member variables referenced in JSP need to start with lower case - even if this starts with uppercase!!!
+
+    public String[] getTabNames() {
+        return tabNames;
+    }
+
+    public void setTabNames(String[] tabNames) {
+        this.tabNames = tabNames;
+    }
+
+    private String [] tabNames;
+
 
     public String getScriptletsAndJSPExpressions_CssClass() {
         return ScriptletsAndJSPExpressions_CssClass;

@@ -26,7 +26,7 @@
                     <tab heading="Search">
 
                         <div class="container">
-                            <div class="${app_css.scriptletsAndJSPExpressions_CssClass}"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
+                            <div class="${app_settings.scriptletsAndJSPExpressions_CssClass}"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
                                 <h2>Using JSP Scriplets and JSP Expressions</h2>
                                 <%--  JSP Scriptlets start/end with <% ... %>
                                         They can contain Java code
@@ -57,7 +57,7 @@
                        </div>
 
                         <div class="container">
-                            <div class="${ app_css.expressionsLanguage_CssClass }"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
+                            <div class="${ app_settings.expressionsLanguage_CssClass }"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
                                 <h2>Using Expression Language which is much simpler ...</h2>
                                 Global Scope: Welcome ${ global_user.name } </br>
                                 Session Scope: Welcome ${ session_user.name } </br>

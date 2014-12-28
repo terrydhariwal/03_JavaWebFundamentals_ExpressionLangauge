@@ -1,6 +1,6 @@
 package io.nosqlyessql.mvc.controllers;
 
-import io.nosqlyessql.mvc.model.ApplicationCssSettings;
+import io.nosqlyessql.mvc.model.MyCustomApplicationSettings;
 import io.nosqlyessql.mvc.model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -17,10 +17,15 @@ public class ControllerServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         System.out.print("in ControllerServlet init");
-        ApplicationCssSettings global_css = new ApplicationCssSettings();
-        global_css.setScriptletsAndJSPExpressions_CssClass("redUser");
-        global_css.setExpressionsLanguage_CssClass("blueUser");
-        getServletContext().setAttribute("app_css", global_css);
+        MyCustomApplicationSettings globalAppsettings = new MyCustomApplicationSettings();
+        globalAppsettings.setScriptletsAndJSPExpressions_CssClass("redUser");
+        globalAppsettings.setExpressionsLanguage_CssClass("blueUser");
+
+        //Demonstrating access to nested properties via EL
+        String [] tabNames = {"SignIn","Home","Profile","Settings"};
+        globalAppsettings.setTabNames(tabNames);
+        getServletContext().setAttribute("app_settings", globalAppsettings);
+
     }
 
     @Override

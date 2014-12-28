@@ -1,5 +1,6 @@
 package io.nosqlyessql.mvc.controllers;
 
+import io.nosqlyessql.mvc.model.ApplicationCssSettings;
 import io.nosqlyessql.mvc.model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -13,7 +14,23 @@ import java.io.IOException;
 @WebServlet(name = "ControllerServlet", urlPatterns = {"*.do"})
 public class ControllerServlet extends HttpServlet {
 
+    @Override
+    public void init() throws ServletException {
+        System.out.print("in ControllerServlet init");
+        ApplicationCssSettings global_css = new ApplicationCssSettings();
+        global_css.setScriptletsAndJSPExpressions_CssClass("redUser");
+        global_css.setExpressionsLanguage_CssClass("blueUser");
+        getServletContext().setAttribute("app_css", global_css);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        System.out.print("in ControllerServlet's doPost");
+    }
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        System.out.print("in ControllerServlet doGet");
         User user = new User();
         user.setName("Terry");
         user.setEmail("terry@nosqlyessql.io");

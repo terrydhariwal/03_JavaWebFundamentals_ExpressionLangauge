@@ -22,23 +22,23 @@
     <div class="row-fluid">
 
       <div class="container">
-        <div class="redUser">
+        <div class="${app_css.scriptletsAndJSPExpressions_CssClass}"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
           <h2>Using JSP Scriplets and JSP Expressions</h2>
           <%--  JSP Scriptlets start/end with <% ... %>
                   They can contain Java code
           --%>
           <%
-            User global_user = (User) request.getServletContext().getAttribute("global_user");
-            if(global_user == null) {
-              global_user = new User();
+            User g_user = (User) request.getServletContext().getAttribute("global_user");
+            if(g_user == null) {
+              g_user = new User();
             }
-            User session_user = (User) request.getSession().getAttribute("session_user");
-            if(session_user == null) {
-              session_user = new User();
+            User s_user = (User) request.getSession().getAttribute("session_user");
+            if(s_user == null) {
+              s_user = new User();
             }
-            User request_user = (User) request.getAttribute("request_user");
-            if(request_user == null) {
-              request_user = new User();
+            User r_user = (User) request.getAttribute("request_user");
+            if(r_user == null) {
+              r_user = new User();
             }
           %>
           <%-- JSP Expressions start/end with <%= ... %%>
@@ -46,14 +46,14 @@
                 And expression is transformed into a statement
                 The value of the statement is converted to a String Object and inserts it into the implicit out object
           --%>
-          Global scope: Welcome <%= global_user.getName() %>   <br/>
-          Session scope: Welcome <%= session_user.getName() %> <br />
-          Request scope: Welcome <%= request_user.getName() %> <br/>
+          Global scope: Welcome <%= g_user.getName() %>   <br/>
+          Session scope: Welcome <%= s_user.getName() %> <br />
+          Request scope: Welcome <%= r_user.getName() %> <br/>
         </div>
       </div>
 
       <div class="container">
-        <div class="blueUser">
+        <div class="${ app_css.expressionsLanguage_CssClass }"> <!-- Funny thing I've found is that for EL to work, you must begin with a lowercase for the attribute - even though the attribute in the bean may start with a upper case!! -->
           <h2>Using Expression Language which is much simpler ...</h2>
           Global Scope: Welcome ${ global_user.name } </br>
           Session Scope: Welcome ${ session_user.name } </br>

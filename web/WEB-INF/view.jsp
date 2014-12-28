@@ -67,6 +67,13 @@
           Global Scope: Welcome ${ global_user.name } </br>
           Session Scope: Welcome ${ session_user.name } </br>
           Request Scope: Welcome ${ request_user.name } </br>
+
+          <div class="container">
+            <h5>Expression Language operators:</h5>
+            &#36;&#123;3+2&#125; equates to <strong>${3+2}</strong>, <br/>
+            &#36;&#123;2==1&#125; equates to <strong>${2 == 1}</strong>, <br/>
+            &#36;&#123;global_user.name == "Terry"&#125; equates to <strong>${global_user.name == "Terry"}</strong>
+          </div>
         </div>
       </div>
 

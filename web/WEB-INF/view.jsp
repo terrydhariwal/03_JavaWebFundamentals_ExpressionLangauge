@@ -21,7 +21,7 @@
 
     <div class="row-fluid">
 
-      <div class="col-md-9">
+      <div class="container">
         <ul class="nav nav-tabs">
           <li><a href="#home" data-toggle="tab">${app_settings.tabNames[0]}</a></li>
           <li><a href="#other" data-toggle="tab">${app_settings.tabNames[1]}</a></li>
